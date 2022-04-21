@@ -8,7 +8,7 @@ import urllib.request
 
 # Function : is_connected 
 # Discription : request is a Python module for fetching URLs
-# 
+# output : connect the internet
 def is_connected():
     try:
         urllib.request.urlopen('http://google.com',timeout=5)
@@ -16,11 +16,15 @@ def is_connected():
     except urllib.error.URLError as err:
         return False
 
+# Function : Find 
+# Discription : to check the url pattern 
 
 def Find(string):
     url = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+',string)
     return url
 
+# Function : WebLauncher 
+# Discription : open url on web 
 
 def WebLauncher(path):
     with open(path) as fp:
@@ -32,9 +36,10 @@ def WebLauncher(path):
                 webbrowser.open(str,new=2)
 
 
-
+# Function: main function
+# Discription : gives file path argument on cmd 
 def main():
-    print("-------Automation Script by Paresh Chaudhari--------")
+    print("-------Automation Script by Umesh Chaudhari--------")
     print("Application Name: "+ argv[0])
 
     if(len(argv)!=2):
